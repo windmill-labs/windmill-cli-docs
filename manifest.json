@@ -1,0 +1,118 @@
+{
+  "name": "windmill-cli-docs",
+  "description": "Auto-generated Windmill CLI docs: agent prompt, skills, and full CLI reference. Source: github.com/windmill-labs/windmill.",
+  "skills": [
+    {
+      "name": "write-script-bash",
+      "description": "MUST use when writing Bash scripts."
+    },
+    {
+      "name": "write-script-bigquery",
+      "description": "MUST use when writing BigQuery queries."
+    },
+    {
+      "name": "write-script-bun",
+      "description": "MUST use when writing Bun/TypeScript scripts."
+    },
+    {
+      "name": "write-script-bunnative",
+      "description": "MUST use when writing Bun Native scripts."
+    },
+    {
+      "name": "write-script-csharp",
+      "description": "MUST use when writing C# scripts."
+    },
+    {
+      "name": "write-script-deno",
+      "description": "MUST use when writing Deno/TypeScript scripts."
+    },
+    {
+      "name": "write-script-duckdb",
+      "description": "MUST use when writing DuckDB queries."
+    },
+    {
+      "name": "write-script-go",
+      "description": "MUST use when writing Go scripts."
+    },
+    {
+      "name": "write-script-graphql",
+      "description": "MUST use when writing GraphQL queries."
+    },
+    {
+      "name": "write-script-java",
+      "description": "MUST use when writing Java scripts."
+    },
+    {
+      "name": "write-script-mssql",
+      "description": "MUST use when writing MS SQL Server queries."
+    },
+    {
+      "name": "write-script-mysql",
+      "description": "MUST use when writing MySQL queries."
+    },
+    {
+      "name": "write-script-nativets",
+      "description": "MUST use when writing Native TypeScript scripts."
+    },
+    {
+      "name": "write-script-php",
+      "description": "MUST use when writing PHP scripts."
+    },
+    {
+      "name": "write-script-postgresql",
+      "description": "MUST use when writing PostgreSQL queries."
+    },
+    {
+      "name": "write-script-powershell",
+      "description": "MUST use when writing PowerShell scripts."
+    },
+    {
+      "name": "write-script-python3",
+      "description": "MUST use when writing Python scripts."
+    },
+    {
+      "name": "write-script-rlang",
+      "description": "MUST use when writing R scripts."
+    },
+    {
+      "name": "write-script-rust",
+      "description": "MUST use when writing Rust scripts."
+    },
+    {
+      "name": "write-script-snowflake",
+      "description": "MUST use when writing Snowflake queries."
+    },
+    {
+      "name": "write-flow",
+      "description": "MUST use when creating flows."
+    },
+    {
+      "name": "raw-app",
+      "description": "MUST use when creating raw apps."
+    },
+    {
+      "name": "triggers",
+      "description": "MUST use when configuring triggers."
+    },
+    {
+      "name": "schedules",
+      "description": "MUST use when configuring schedules."
+    },
+    {
+      "name": "resources",
+      "description": "MUST use when managing resources."
+    },
+    {
+      "name": "write-workflow-as-code",
+      "description": "MUST use when writing or modifying Windmill Workflow-as-Code scripts using workflow, task, step, sleep, approvals, taskScript, taskFlow, task_script, or task_flow."
+    },
+    {
+      "name": "cli-commands",
+      "description": "MUST use when using the CLI, including debugging job failures and inspecting run history via `wmill job`."
+    },
+    {
+      "name": "preview",
+      "description": "MUST use when opening the Windmill dev page / visual preview of a flow, script, or app. Triggers on words like preview, open, navigate to, visualize, see the flow/app/script, and after writing a flow/script/app for visual verification."
+    }
+  ]
+}
