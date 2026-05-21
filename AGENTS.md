@@ -1,4 +1,8 @@
-# Windmill AI Agent Instructions
+# Windmill CLI Agent Instructions
+
+> Managed by `wmill`. This file is regenerated on `wmill init` and
+> `wmill refresh prompts` — edit AGENTS.md (user-owned) for project-specific
+> instructions instead.
 
 You are a helpful assistant that can help with Windmill scripts, flows, apps, and resources management.
 
@@ -42,6 +46,50 @@ You MUST use the `preview` skill any time the user wants to see/open/visualize/p
 
 You MUST use the `cli-commands` skill to use the CLI.
 
+## Running and previewing local changes
+
+Local previews exist for every entity type and don't deploy:
+
+- `wmill script preview <path> -d '<args>'` — run a local script.
+- `wmill flow preview <flow_path> -d '<args>'` — run a local flow.yaml.
+- `wmill app dev` — live-reload dev server for raw apps.
+
+Argument shapes and per-language details live in the `write-script-<lang>`, `write-flow`, and `raw-app` skills.
+
+## Deploying
+
+There are two ways local changes reach the workspace. Pick based on how the repo is wired, not habit.
+
+### Detecting the setup
+
+Before deploying, check whether this repo has a **GitHub Actions (or other CI) workflow that runs `wmill sync push` on push**. That workflow is the signal that pushing a branch will deploy:
+
+- Look for `.github/workflows/*.yml` (or other CI configs) that invoke `wmill sync push`, `wmill` deployment commands, or similar.
+- Cache the result for the rest of the session — don't re-scan on every deploy.
+
+If such a workflow exists → **use `git push`** (Option A). Otherwise → **use `wmill sync push`** directly (Option B).
+
+### Option A — `git push` (CI is wired to sync)
+
+The CI workflow will pick up the commit and run `wmill sync push` on the backend, which is how deployments are intended to happen in this repo. Don't bypass it.
+
+1. `git add` + `git commit` the local changes.
+2. `git push` to the branch the CI runs on.
+3. The workflow deploys to the workspace.
+
+Only fall back to Option B if the user explicitly asks to bypass CI for this change (e.g. CI is broken, urgent hotfix), or if the workflow doesn't cover the current branch.
+
+### Option B — `wmill sync push` (no CI wiring)
+
+No CI workflow runs `wmill sync push` automatically, so deploy directly from the CLI:
+
+- `wmill sync push --dry-run` to preview.
+- `wmill sync push` to apply.
+
+### In both cases
+
+Only deploy when the user explicitly asks to deploy, publish, push, or ship — not when they say "run", "try", or "test". For testing local edits use the per-entity `preview` commands (`wmill script preview`, `wmill flow preview`) — they don't deploy.
+
 ## Debugging Jobs
 
 When the user reports a script or flow failure, is investigating unexpected output, or asks why something ran the way it did, use the CLI to fetch job details before speculating. See the `cli-commands` skill for all flags.
@@ -57,33 +105,33 @@ For flow failures, start with `wmill job get <id>` to identify the failing step 
 
 ## Skills
 
-For specific guidance, ALWAYS use the skills listed below.
+For specific guidance, ALWAYS use the skills listed below. Paths point at `.agents/skills/` — Claude Code reads identical copies under `.claude/skills/`.
 
-- `.claude/skills/write-script-bash/SKILL.md` - MUST use when writing Bash scripts.
-- `.claude/skills/write-script-bigquery/SKILL.md` - MUST use when writing BigQuery queries.
-- `.claude/skills/write-script-bun/SKILL.md` - MUST use when writing Bun/TypeScript scripts.
-- `.claude/skills/write-script-bunnative/SKILL.md` - MUST use when writing Bun Native scripts.
-- `.claude/skills/write-script-csharp/SKILL.md` - MUST use when writing C# scripts.
-- `.claude/skills/write-script-deno/SKILL.md` - MUST use when writing Deno/TypeScript scripts.
-- `.claude/skills/write-script-duckdb/SKILL.md` - MUST use when writing DuckDB queries.
-- `.claude/skills/write-script-go/SKILL.md` - MUST use when writing Go scripts.
-- `.claude/skills/write-script-graphql/SKILL.md` - MUST use when writing GraphQL queries.
-- `.claude/skills/write-script-java/SKILL.md` - MUST use when writing Java scripts.
-- `.claude/skills/write-script-mssql/SKILL.md` - MUST use when writing MS SQL Server queries.
-- `.claude/skills/write-script-mysql/SKILL.md` - MUST use when writing MySQL queries.
-- `.claude/skills/write-script-nativets/SKILL.md` - MUST use when writing Native TypeScript scripts.
-- `.claude/skills/write-script-php/SKILL.md` - MUST use when writing PHP scripts.
-- `.claude/skills/write-script-postgresql/SKILL.md` - MUST use when writing PostgreSQL queries.
-- `.claude/skills/write-script-powershell/SKILL.md` - MUST use when writing PowerShell scripts.
-- `.claude/skills/write-script-python3/SKILL.md` - MUST use when writing Python scripts.
-- `.claude/skills/write-script-rlang/SKILL.md` - MUST use when writing R scripts.
-- `.claude/skills/write-script-rust/SKILL.md` - MUST use when writing Rust scripts.
-- `.claude/skills/write-script-snowflake/SKILL.md` - MUST use when writing Snowflake queries.
-- `.claude/skills/write-flow/SKILL.md` - MUST use when creating flows.
-- `.claude/skills/raw-app/SKILL.md` - MUST use when creating raw apps.
-- `.claude/skills/triggers/SKILL.md` - MUST use when configuring triggers.
-- `.claude/skills/schedules/SKILL.md` - MUST use when configuring schedules.
-- `.claude/skills/resources/SKILL.md` - MUST use when managing resources.
-- `.claude/skills/write-workflow-as-code/SKILL.md` - MUST use when writing or modifying Windmill Workflow-as-Code scripts using workflow, task, step, sleep, approvals, taskScript, taskFlow, task_script, or task_flow.
-- `.claude/skills/cli-commands/SKILL.md` - MUST use when using the CLI, including debugging job failures and inspecting run history via `wmill job`.
-- `.claude/skills/preview/SKILL.md` - MUST use when opening the Windmill dev page / visual preview of a flow, script, or app. Triggers on words like preview, open, navigate to, visualize, see the flow/app/script, and after writing a flow/script/app for visual verification.
+- `.agents/skills/write-script-bash/SKILL.md` - MUST use when writing Bash scripts.
+- `.agents/skills/write-script-bigquery/SKILL.md` - MUST use when writing BigQuery queries.
+- `.agents/skills/write-script-bun/SKILL.md` - MUST use when writing Bun/TypeScript scripts.
+- `.agents/skills/write-script-bunnative/SKILL.md` - MUST use when writing Bun Native scripts.
+- `.agents/skills/write-script-csharp/SKILL.md` - MUST use when writing C# scripts.
+- `.agents/skills/write-script-deno/SKILL.md` - MUST use when writing Deno/TypeScript scripts.
+- `.agents/skills/write-script-duckdb/SKILL.md` - MUST use when writing DuckDB queries.
+- `.agents/skills/write-script-go/SKILL.md` - MUST use when writing Go scripts.
+- `.agents/skills/write-script-graphql/SKILL.md` - MUST use when writing GraphQL queries.
+- `.agents/skills/write-script-java/SKILL.md` - MUST use when writing Java scripts.
+- `.agents/skills/write-script-mssql/SKILL.md` - MUST use when writing MS SQL Server queries.
+- `.agents/skills/write-script-mysql/SKILL.md` - MUST use when writing MySQL queries.
+- `.agents/skills/write-script-nativets/SKILL.md` - MUST use when writing Native TypeScript scripts.
+- `.agents/skills/write-script-php/SKILL.md` - MUST use when writing PHP scripts.
+- `.agents/skills/write-script-postgresql/SKILL.md` - MUST use when writing PostgreSQL queries.
+- `.agents/skills/write-script-powershell/SKILL.md` - MUST use when writing PowerShell scripts.
+- `.agents/skills/write-script-python3/SKILL.md` - MUST use when writing Python scripts.
+- `.agents/skills/write-script-rlang/SKILL.md` - MUST use when writing R scripts.
+- `.agents/skills/write-script-rust/SKILL.md` - MUST use when writing Rust scripts.
+- `.agents/skills/write-script-snowflake/SKILL.md` - MUST use when writing Snowflake queries.
+- `.agents/skills/write-flow/SKILL.md` - MUST use when creating flows.
+- `.agents/skills/raw-app/SKILL.md` - MUST use when creating raw apps.
+- `.agents/skills/triggers/SKILL.md` - MUST use when configuring triggers.
+- `.agents/skills/schedules/SKILL.md` - MUST use when configuring schedules.
+- `.agents/skills/resources/SKILL.md` - MUST use when managing resources.
+- `.agents/skills/write-workflow-as-code/SKILL.md` - MUST use when writing or modifying Windmill Workflow-as-Code scripts using workflow, task, step, sleep, approvals, taskScript, taskFlow, task_script, or task_flow.
+- `.agents/skills/cli-commands/SKILL.md` - MUST use when using the CLI, including debugging job failures and inspecting run history via `wmill job`.
+- `.agents/skills/preview/SKILL.md` - MUST use when opening the Windmill dev page / visual preview of a flow, script, or app. Triggers on words like preview, open, navigate to, visualize, see the flow/app/script, and after writing a flow/script/app for visual verification.
