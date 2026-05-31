@@ -112,7 +112,7 @@ For specific guidance, ALWAYS use the skills listed below. Paths point at `.agen
 - `.agents/skills/write-script-bash/SKILL.md` - MUST use when writing Bash scripts.
 - `.agents/skills/write-script-bigquery/SKILL.md` - MUST use when writing BigQuery queries.
 - `.agents/skills/write-script-bun/SKILL.md` - MUST use when writing Bun/TypeScript scripts.
-- `.agents/skills/write-script-bunnative/SKILL.md` - MUST use when writing Bun Native scripts.
+- `.agents/skills/write-script-bunnative/SKILL.md` - MUST use when writing Bun Native scripts. The script must start with //native to run on the native worker.
 - `.agents/skills/write-script-csharp/SKILL.md` - MUST use when writing C# scripts.
 - `.agents/skills/write-script-deno/SKILL.md` - MUST use when writing Deno/TypeScript scripts.
 - `.agents/skills/write-script-duckdb/SKILL.md` - MUST use when writing DuckDB queries.
@@ -121,7 +121,6 @@ For specific guidance, ALWAYS use the skills listed below. Paths point at `.agen
 - `.agents/skills/write-script-java/SKILL.md` - MUST use when writing Java scripts.
 - `.agents/skills/write-script-mssql/SKILL.md` - MUST use when writing MS SQL Server queries.
 - `.agents/skills/write-script-mysql/SKILL.md` - MUST use when writing MySQL queries.
-- `.agents/skills/write-script-nativets/SKILL.md` - MUST use when writing Native TypeScript scripts.
 - `.agents/skills/write-script-php/SKILL.md` - MUST use when writing PHP scripts.
 - `.agents/skills/write-script-postgresql/SKILL.md` - MUST use when writing PostgreSQL queries.
 - `.agents/skills/write-script-powershell/SKILL.md` - MUST use when writing PowerShell scripts.

@@ -130,7 +130,6 @@ source (wmill completions fish | psub)  # fish
 - `skills/write-script-java/SKILL.md`
 - `skills/write-script-mssql/SKILL.md`
 - `skills/write-script-mysql/SKILL.md`
-- `skills/write-script-nativets/SKILL.md`
 - `skills/write-script-php/SKILL.md`
 - `skills/write-script-postgresql/SKILL.md`
 - `skills/write-script-powershell/SKILL.md`
