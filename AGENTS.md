@@ -65,9 +65,10 @@ There are two ways local changes reach the workspace. Pick based on how the repo
 Before deploying, check whether this repo has a **GitHub Actions (or other CI) workflow that runs `wmill sync push` on push**. That workflow is the signal that pushing a branch will deploy:
 
 - Look for `.github/workflows/*.yml` (or other CI configs) that invoke `wmill sync push`, `wmill` deployment commands, or similar.
-- Cache the result for the rest of the session — don't re-scan on every deploy.
 
 If such a workflow exists → **use `git push`** (Option A). Otherwise → **use `wmill sync push`** directly (Option B).
+
+**Save the preference so you don't re-detect it every session.** Once you've determined which option this repo uses (or the user tells you), record it in the **project-specific instructions** section of `AGENTS.md` (user-owned — never overwritten by `wmill refresh prompts`), e.g. a line like `Deploy mode: git push (CI runs wmill sync push)` or `Deploy mode: wmill sync push (no CI wiring)`. On later sessions, read that line first and skip the scan. Re-detect only if the CI wiring visibly changed.
 
 ### Option A — `git push` (CI is wired to sync)
 
@@ -89,6 +90,19 @@ No CI workflow runs `wmill sync push` automatically, so deploy directly from the
 ### In both cases
 
 Only deploy when the user explicitly asks to deploy, publish, push, or ship — not when they say "run", "try", or "test". For testing local edits use the per-entity `preview` commands (`wmill script preview`, `wmill flow preview`) — they don't deploy.
+
+## Workspace forks
+
+A **fork** is an isolated copy of a workspace for parallel or experimental work — make changes (including to datatables, which are cloned per fork) without touching the parent, then merge back after review. Each fork is paired with a git branch named `wm-fork/<base>/<id>`. Forks require a git repo.
+
+Just run `wmill workspace fork` — it adapts to where you are:
+
+- **On a base branch** (e.g. `main`, or a branch bound to a workspace): it bases the fork on that branch and prints a `git checkout -b wm-fork/<base>/<id>` to start a fresh fork branch.
+- **On a working branch** (e.g. you've branched and already edited a forked datatable): it offers to base the fork on that branch and rename it onto `wm-fork/<base>/<id>` in place, preserving its commits — asking which base branch is the parent if there's more than one.
+
+For non-interactive runs from a working branch, pass `--from-branch <base>` to skip the prompts. The CLI refuses to rename a base branch.
+
+Merge a fork back into its parent with `wmill workspace merge` (or the Merge UI on the fork's home page). Full reference: https://www.windmill.dev/docs/advanced/workspace_forks
 
 ## Debugging Jobs
 
