@@ -136,3 +136,11 @@ For specific guidance, ALWAYS use the skills listed below. Paths point at `.agen
 - `.agents/skills/write-workflow-as-code/SKILL.md` - MUST use when writing or modifying Windmill Workflow-as-Code scripts using workflow, task, step, sleep, approvals, taskScript, taskFlow, task_script, or task_flow.
 - `.agents/skills/cli-commands/SKILL.md` - MUST use when using the CLI, including debugging job failures and inspecting run history via `wmill job`.
 - `.agents/skills/preview/SKILL.md` - MUST use when opening the Windmill dev page / visual preview of a flow, script, or app. Triggers on words like preview, open, navigate to, visualize, see the flow/app/script, and after writing a flow/script/app for visual verification.
+
+## Windmill Documentation
+
+For Windmill concepts not covered by the skills (triggers, schedules, workers, flows, error handling, etc.), read the official docs:
+
+- Fetch https://www.windmill.dev/llms.txt — a curated index of every docs page with one-line descriptions — to find the right page for any concept.
+- Every docs page is available as raw markdown by appending `.md` to its URL, e.g. https://www.windmill.dev/docs/core_concepts/scheduling.md — prefer these over the HTML pages.
+- https://www.windmill.dev/llms-full.txt is the entire documentation as a single ~2.3 MB file — only for bulk indexing/RAG, do NOT load it directly into context.
