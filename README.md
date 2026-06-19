@@ -118,6 +118,7 @@ source (wmill completions fish | psub)  # fish
 
 ### Skills index
 
+- `skills/write-script-ansible/SKILL.md`
 - `skills/write-script-bash/SKILL.md`
 - `skills/write-script-bigquery/SKILL.md`
 - `skills/write-script-bun/SKILL.md`

@@ -3,6 +3,10 @@
   "description": "Auto-generated Windmill CLI docs: agent prompt, skills, and full CLI reference. Source: github.com/windmill-labs/windmill.",
   "skills": [
     {
+      "name": "write-script-ansible",
+      "description": "MUST use when writing Ansible playbooks."
+    },
+    {
       "name": "write-script-bash",
       "description": "MUST use when writing Bash scripts."
     },
@@ -111,5 +115,5 @@
       "description": "MUST use when opening the Windmill dev page / visual preview of a flow, script, or app. Triggers on words like preview, open, navigate to, visualize, see the flow/app/script, and after writing a flow/script/app for visual verification."
     }
   ],
-  "version": "1.731.0"
+  "version": "1.732.0"
 }

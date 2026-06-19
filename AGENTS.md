@@ -137,6 +137,7 @@ For flow failures, start with `wmill job get <id>` to identify the failing step 
 
 For specific guidance, ALWAYS use the skills listed below. Paths point at `.agents/skills/` — Claude Code reads identical copies under `.claude/skills/`.
 
+- `.agents/skills/write-script-ansible/SKILL.md` - MUST use when writing Ansible playbooks.
 - `.agents/skills/write-script-bash/SKILL.md` - MUST use when writing Bash scripts.
 - `.agents/skills/write-script-bigquery/SKILL.md` - MUST use when writing BigQuery queries.
 - `.agents/skills/write-script-bun/SKILL.md` - MUST use when writing Bun/TypeScript scripts.
