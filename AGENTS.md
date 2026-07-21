@@ -28,7 +28,7 @@ When a new app needs to be created, YOU run `wmill app new` yourself with `--sum
 
 ## Triggers
 
-You MUST use the `triggers` skill to configure HTTP routes, WebSocket, Kafka, NATS, SQS, MQTT, GCP, Azure, Email, or Postgres CDC triggers.
+You MUST use the `triggers` skill to configure HTTP routes, WebSocket, Kafka, NATS, SQS, MQTT, AMQP, GCP, Azure, Email, or Postgres CDC triggers.
 
 ## Schedules
 
