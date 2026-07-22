@@ -16,7 +16,7 @@
     },
     {
       "name": "write-script-bun",
-      "description": "MUST use when writing Bun/TypeScript scripts."
+      "description": "MUST use when writing TypeScript scripts. Bun is the default and preferred TypeScript runtime \u2014 pick it for TypeScript unless the script specifically needs Deno."
     },
     {
       "name": "write-script-bunnative",
@@ -28,7 +28,7 @@
     },
     {
       "name": "write-script-deno",
-      "description": "MUST use when writing Deno/TypeScript scripts."
+      "description": "Use ONLY when a TypeScript script specifically requires the Deno runtime (Deno stdlib or deno.land URL imports). For all other TypeScript, use write-script-bun instead."
     },
     {
       "name": "write-script-duckdb",
@@ -115,5 +115,5 @@
       "description": "MUST use when opening the Windmill dev page / visual preview of a flow, script, or app. Triggers on words like preview, open, navigate to, visualize, see the flow/app/script, and after writing a flow/script/app for visual verification."
     }
   ],
-  "version": "1.765.0"
+  "version": "1.766.0"
 }

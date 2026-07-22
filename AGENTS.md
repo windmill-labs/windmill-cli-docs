@@ -13,7 +13,7 @@ You are a helpful assistant that can help with Windmill scripts, flows, apps, an
 
 ## Script Writing Guide
 
-You MUST use the `write-script-<language>` skill to write or modify scripts in the language specified by the user. Use bun by default.
+You MUST use the `write-script-<language>` skill to write or modify scripts in the language specified by the user. Use bun by default. For TypeScript, always prefer bun (`write-script-bun`) over deno unless the script specifically requires the Deno runtime.
 For Workflow-as-Code scripts, use the `write-workflow-as-code` skill.
 
 ## Flow Writing Guide
@@ -143,10 +143,10 @@ For specific guidance, ALWAYS use the skills listed below. Paths point at `.agen
 - `.agents/skills/write-script-ansible/SKILL.md` - MUST use when writing Ansible playbooks.
 - `.agents/skills/write-script-bash/SKILL.md` - MUST use when writing Bash scripts.
 - `.agents/skills/write-script-bigquery/SKILL.md` - MUST use when writing BigQuery queries.
-- `.agents/skills/write-script-bun/SKILL.md` - MUST use when writing Bun/TypeScript scripts.
+- `.agents/skills/write-script-bun/SKILL.md` - MUST use when writing TypeScript scripts. Bun is the default and preferred TypeScript runtime — pick it for TypeScript unless the script specifically needs Deno.
 - `.agents/skills/write-script-bunnative/SKILL.md` - MUST use when writing Bun Native scripts. The script must start with //native to run on the native worker.
 - `.agents/skills/write-script-csharp/SKILL.md` - MUST use when writing C# scripts.
-- `.agents/skills/write-script-deno/SKILL.md` - MUST use when writing Deno/TypeScript scripts.
+- `.agents/skills/write-script-deno/SKILL.md` - Use ONLY when a TypeScript script specifically requires the Deno runtime (Deno stdlib or deno.land URL imports). For all other TypeScript, use write-script-bun instead.
 - `.agents/skills/write-script-duckdb/SKILL.md` - MUST use when writing DuckDB queries.
 - `.agents/skills/write-script-go/SKILL.md` - MUST use when writing Go scripts.
 - `.agents/skills/write-script-graphql/SKILL.md` - MUST use when writing GraphQL queries.
