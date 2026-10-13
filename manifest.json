@@ -111,6 +111,10 @@
       "description": "MUST use when creating or modifying a data pipeline, a set of scripts marked `pipeline` and wired together by `on` / `materialize` annotations."
     },
     {
+      "name": "datatables",
+      "description": "MUST use when changing a data table's schema, writing or running its migrations, or working with its roles and permissions."
+    },
+    {
       "name": "cli-commands",
       "description": "MUST use when using the CLI, including debugging job failures and inspecting run history via `wmill job`."
     },
@@ -119,5 +123,5 @@
       "description": "MUST use when opening the Windmill dev page / visual preview of a flow, script, or app. Triggers on words like preview, open, navigate to, visualize, see the flow/app/script, and after writing a flow/script/app for visual verification."
     }
   ],
-  "version": "1.830.0"
+  "version": "1.831.0"
 }
