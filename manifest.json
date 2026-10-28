@@ -103,6 +103,10 @@
       "description": "MUST use when managing resources."
     },
     {
+      "name": "agents",
+      "description": "MUST use when creating or changing an AI agent, the reusable `ai_agent` resource the Agents page lists."
+    },
+    {
       "name": "write-workflow-as-code",
       "description": "MUST use when writing or modifying Windmill Workflow-as-Code scripts using workflow, task, step, sleep, approvals, taskScript, taskFlow, task_script, or task_flow."
     },
@@ -127,5 +131,5 @@
       "description": "MUST use when opening the Windmill dev page / visual preview of a flow, script, or app. Triggers on words like preview, open, navigate to, visualize, see the flow/app/script, and after writing a flow/script/app for visual verification."
     }
   ],
-  "version": "1.850.0"
+  "version": "1.851.0"
 }

@@ -143,6 +143,7 @@ source (wmill completions fish | psub)  # fish
 - `skills/triggers/SKILL.md`
 - `skills/schedules/SKILL.md`
 - `skills/resources/SKILL.md`
+- `skills/agents/SKILL.md`
 - `skills/write-workflow-as-code/SKILL.md`
 - `skills/write-pipeline/SKILL.md`
 - `skills/datatables/SKILL.md`
