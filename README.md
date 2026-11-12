@@ -148,6 +148,7 @@ source (wmill completions fish | psub)  # fish
 - `skills/write-pipeline/SKILL.md`
 - `skills/datatables/SKILL.md`
 - `skills/workspace-settings/SKILL.md`
+- `skills/rich-results/SKILL.md`
 - `skills/cli-commands/SKILL.md`
 - `skills/preview/SKILL.md`
 

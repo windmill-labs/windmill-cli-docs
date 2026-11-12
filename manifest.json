@@ -123,6 +123,10 @@
       "description": "MUST use when reading or changing workspace settings, or the settings.yaml file `wmill sync` keeps."
     },
     {
+      "name": "rich-results",
+      "description": "MUST use when a script or flow should return a table, chart, markdown, image, file or map instead of plain JSON."
+    },
+    {
       "name": "cli-commands",
       "description": "MUST use when using the CLI, including debugging job failures and inspecting run history via `wmill job`."
     },
@@ -131,5 +135,5 @@
       "description": "MUST use when opening the Windmill dev page / visual preview of a flow, script, or app. Triggers on words like preview, open, navigate to, visualize, see the flow/app/script, and after writing a flow/script/app for visual verification."
     }
   ],
-  "version": "1.869.0"
+  "version": "1.870.0"
 }
