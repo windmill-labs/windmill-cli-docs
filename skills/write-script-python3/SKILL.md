@@ -244,11 +244,14 @@ def get_client() -> httpx.Client
 # Args:
 #     endpoint: API endpoint path
 #     raise_for_status: Whether to raise an exception on HTTP errors
+#     retry_transient: Retry on 429 and 502-504 with exponential backoff, honoring
+#         Retry-After. Pass False for an endpoint with a side effect.
+#     retry_budget: Most seconds to spend sleeping between retries (at most 15)
 #     **kwargs: Additional arguments passed to httpx.get
 # 
 # Returns:
 #     HTTP response object
-def get(endpoint, raise_for_status = True, **kwargs) -> httpx.Response
+def get(endpoint, raise_for_status = True, *, retry_transient: bool = True, retry_budget: float | None = None, **kwargs) -> httpx.Response
 
 # Make an HTTP POST request to the Windmill API.
 # 
