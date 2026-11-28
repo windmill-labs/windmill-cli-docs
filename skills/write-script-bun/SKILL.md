@@ -874,3 +874,9 @@ upsertPartition(opts: DucklakeMaterializeOptions): SqlStatement<any>
  * `await wmill.appendPartition({ table, selectSql, partition }).execute()`.
  */
 appendPartition(opts: Omit<DucklakeMaterializeOptions, "uniqueKey">,): SqlStatement<any>
+
+/**
+ * The names a v1 task job binds its arguments by, in order: the script parser names an
+ * object pattern `anon<N>`, and an array pattern has no name (`""`).
+ */
+getParamNames(func: Function): string[]

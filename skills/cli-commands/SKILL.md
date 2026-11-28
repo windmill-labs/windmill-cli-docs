@@ -130,6 +130,7 @@ Watch local file changes and live-reload the dev page for preview. Does NOT depl
 - `--proxy-port <port:number>` - Port for a localhost reverse proxy to the remote Windmill server
 - `--path <path:string>` - Watch a specific windmill path (e.g., u/admin/my_script or f/my_flow)
 - `--no-open` - Do not open the browser automatically
+- `--host <host:string>` - Address to bind the dev server to: a loopback address or 0.0.0.0 for every interface (default: 127.0.0.1, this machine only)
 
 ### digest
 
